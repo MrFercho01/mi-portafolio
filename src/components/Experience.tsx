@@ -33,6 +33,8 @@ const experiences: Achievement[] = [
       'Liderazgo de equipos de desarrollo y operaciones TI',
       'Gestión de proyectos de transformación digital',
       'Implementación de ERP Microsoft Dynamics AX/365',
+      'Administración y configuración de Salesforce CRM',
+      'Desarrollo de soluciones con Inteligencia Artificial',
       'Coordinación con stakeholders y áreas de negocio',
       'Optimización de procesos y arquitectura de sistemas',
     ],

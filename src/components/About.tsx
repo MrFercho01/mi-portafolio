@@ -31,8 +31,10 @@ const About: React.FC = () => {
               <p className="text-lg text-gray-700 leading-relaxed">
                 Con amplia experiencia en el sector bancario y empresarial, he desarrollado 
                 proyectos de analítica avanzada, integraciones complejas, automatizaciones 
-                con Power Platform y soluciones ERP con Microsoft Dynamics. Mi enfoque está 
-                en código de alta calidad, arquitecturas escalables y mejores prácticas.
+                con Power Platform y soluciones ERP con Microsoft Dynamics. Experiencia en 
+                administración de Salesforce y aplicación de Inteligencia Artificial en 
+                proyectos empresariales. Mi enfoque está en código de alta calidad, 
+                arquitecturas escalables y mejores prácticas.
               </p>
 
               {/* Certificaciones */}
@@ -90,6 +92,8 @@ const About: React.FC = () => {
                     { name: 'Desarrollo Web (2013-Presente)', level: 95 },
                     { name: 'Desarrollo Full Stack (2018-Presente)', level: 92 },
                     { name: 'TypeScript & JavaScript', level: 90 },
+                    { name: 'Inteligencia Artificial & ML', level: 87 },
+                    { name: 'Salesforce Administration', level: 85 },
                     { name: 'Desarrollo Mobile (2024-Presente)', level: 85 },
                   ].map((skill, index) => (
                     <div key={index}>
