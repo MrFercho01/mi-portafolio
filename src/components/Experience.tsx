@@ -24,6 +24,20 @@ const experiences: Achievement[] = [
     ],
   },
   {
+    company: 'Empresas de Retail y Servicios',
+    role: 'Líder de Desarrollo / Jefe de Sistemas',
+    period: '2015-2021',
+    icon: '👔',
+    color: 'bg-orange-500',
+    achievements: [
+      'Liderazgo de equipos de desarrollo y operaciones TI',
+      'Gestión de proyectos de transformación digital',
+      'Implementación de ERP Microsoft Dynamics AX/365',
+      'Coordinación con stakeholders y áreas de negocio',
+      'Optimización de procesos y arquitectura de sistemas',
+    ],
+  },
+  {
     company: 'Banco Pacífico',
     role: 'Desarrollador Full Stack',
     period: '2013-2015, 2019-2021',
