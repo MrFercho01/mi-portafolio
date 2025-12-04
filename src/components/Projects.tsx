@@ -1,10 +1,12 @@
 import React from 'react';
+import { ExternalLink, Github } from 'lucide-react';
 
 interface Project {
   title: string;
   description: string;
   technologies: string[];
   imageUrl: string;
+  icon: string;
   link?: string;
 }
 
@@ -13,21 +15,24 @@ const projects: Project[] = [
     title: 'RastreaTuPedido (Demo)',
     description: 'Proyecto demostrativo de sistema de rastreo de pedidos para empresas textiles. App móvil multiplataforma iOS/Android desarrollada con React Native, TypeScript y arquitectura limpia. Incluye documentación técnica completa y mejores prácticas de desarrollo.',
     technologies: ['React Native', 'TypeScript', 'Expo', 'React Navigation'],
-    imageUrl: 'https://via.placeholder.com/400x300/0ea5e9/ffffff?text=RastreaTuPedido',
+    imageUrl: 'https://images.unsplash.com/photo-1621111848501-8d3634f82336?w=800&h=600&fit=crop',
+    icon: '📱',
     link: 'https://github.com/MrFercho01/RastreaTuPedido',
   },
   {
     title: 'Portafolio Profesional',
     description: 'Este mismo sitio web - Proyecto desarrollado para mi empresa personal. Portafolio profesional con diseño moderno, animaciones fluidas, completamente responsive y optimizado para SEO. Desarrollado con Vite, React y Tailwind CSS.',
     technologies: ['Vite', 'React', 'TypeScript', 'Tailwind CSS'],
-    imageUrl: 'https://via.placeholder.com/400x300/0ea5e9/ffffff?text=Portfolio',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    icon: '💼',
     link: '#',
   },
   {
     title: 'Proyectos Empresariales (Referencia)',
     description: 'Múltiples proyectos desarrollados para clientes y empresas. Incluyen aplicaciones web con backend robusto, autenticación JWT, paneles de administración, integraciones bancarias, sistemas ERP y automatizaciones con Power Platform.',
     technologies: ['Node.js', 'Java', 'React', 'Power Platform', 'Dynamics 365'],
-    imageUrl: 'https://via.placeholder.com/400x300/0ea5e9/ffffff?text=Proyectos',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    icon: '🏢',
     link: '#',
   },
 ];
@@ -52,25 +57,35 @@ const Projects: React.FC = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative overflow-hidden group">
+              <div className="relative overflow-hidden group h-48">
+                {/* Icono del proyecto */}
+                <div className="absolute top-4 left-4 z-10 w-14 h-14 bg-white rounded-full flex items-center justify-center text-3xl shadow-lg">
+                  {project.icon}
+                </div>
+                
                 <img
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-primary-900 bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center">
-                  {project.link && (
+                
+                {/* Overlay con botón */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                  {project.link && project.link !== '#' ? (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="opacity-0 group-hover:opacity-100 px-6 py-2 bg-white text-primary-900 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary-50 flex items-center gap-2"
+                      className="px-6 py-3 bg-white text-primary-900 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary-50 flex items-center gap-2 shadow-xl"
                     >
+                      <Github className="w-5 h-5" />
                       <span>Ver en GitHub</span>
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                      </svg>
                     </a>
+                  ) : (
+                    <div className="px-6 py-3 bg-white/90 text-gray-600 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2 shadow-xl">
+                      <ExternalLink className="w-5 h-5" />
+                      <span>Proyecto Privado</span>
+                    </div>
                   )}
                 </div>
               </div>
