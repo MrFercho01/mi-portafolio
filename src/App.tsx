@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Services from './components/Services'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
+import Leadership from './components/Leadership'
 import ERP from './components/ERP'
 import Achievements from './components/Achievements'
 import About from './components/About'
@@ -16,6 +17,7 @@ function App() {
       <Services />
       <Projects />
       <Experience />
+      <Leadership />
       <ERP />
       <Achievements />
       <About />
