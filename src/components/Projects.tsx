@@ -5,7 +5,7 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
-  imageUrl: string;
+  gradient: string;
   icon: string;
   link?: string;
 }
@@ -15,7 +15,7 @@ const projects: Project[] = [
     title: 'RastreaTuPedido (Demo)',
     description: 'Proyecto demostrativo de sistema de rastreo de pedidos para empresas textiles. App móvil multiplataforma iOS/Android desarrollada con React Native, TypeScript y arquitectura limpia. Incluye documentación técnica completa y mejores prácticas de desarrollo.',
     technologies: ['React Native', 'TypeScript', 'Expo', 'React Navigation'],
-    imageUrl: 'https://images.unsplash.com/photo-1621111848501-8d3634f82336?w=800&h=600&fit=crop',
+    gradient: 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500',
     icon: '📱',
     link: 'https://github.com/MrFercho01/RastreaTuPedido',
   },
@@ -23,7 +23,7 @@ const projects: Project[] = [
     title: 'Portafolio Profesional',
     description: 'Este mismo sitio web - Proyecto desarrollado para mi empresa personal. Portafolio profesional con diseño moderno, animaciones fluidas, completamente responsive y optimizado para SEO. Desarrollado con Vite, React y Tailwind CSS.',
     technologies: ['Vite', 'React', 'TypeScript', 'Tailwind CSS'],
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    gradient: 'bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-600',
     icon: '💼',
     link: '#',
   },
@@ -31,7 +31,7 @@ const projects: Project[] = [
     title: 'Proyectos Empresariales (Referencia)',
     description: 'Múltiples proyectos desarrollados para clientes y empresas. Incluyen aplicaciones web con backend robusto, autenticación JWT, paneles de administración, integraciones bancarias, sistemas ERP y automatizaciones con Power Platform.',
     technologies: ['Node.js', 'Java', 'React', 'Power Platform', 'Dynamics 365'],
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    gradient: 'bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600',
     icon: '🏢',
     link: '#',
   },
@@ -58,25 +58,29 @@ const Projects: React.FC = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative overflow-hidden group h-48">
-                {/* Icono del proyecto */}
-                <div className="absolute top-4 left-4 z-10 w-14 h-14 bg-white rounded-full flex items-center justify-center text-3xl shadow-lg">
-                  {project.icon}
+                {/* Background con gradiente */}
+                <div className={`w-full h-full ${project.gradient} opacity-90 group-hover:opacity-100 transition-opacity duration-300`}>
+                  {/* Patrón decorativo */}
+                  <div className="absolute inset-0 opacity-10" style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+                  }}></div>
                 </div>
                 
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
+                {/* Icono del proyecto - centrado y más grande */}
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-6xl shadow-2xl group-hover:scale-110 transition-transform duration-300">
+                    {project.icon}
+                  </div>
+                </div>
                 
-                {/* Overlay con botón */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                {/* Overlay con botón al hacer hover */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center z-20">
                   {project.link && project.link !== '#' ? (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3 bg-white text-primary-900 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary-50 flex items-center gap-2 shadow-xl"
+                      className="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-gray-100 flex items-center gap-2 shadow-xl"
                     >
                       <Github className="w-5 h-5" />
                       <span>Ver en GitHub</span>
