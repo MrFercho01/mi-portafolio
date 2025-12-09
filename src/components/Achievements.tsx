@@ -94,7 +94,7 @@ const Achievements: React.FC = () => {
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
           <div className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl font-bold text-primary-600 mb-2">5+</div>
+            <div className="text-4xl font-bold text-primary-600 mb-2">10+</div>
             <div className="text-gray-600">Años de Experiencia</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg text-center transform hover:scale-105 transition-all duration-300">
