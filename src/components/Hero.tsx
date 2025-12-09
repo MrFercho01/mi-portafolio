@@ -13,14 +13,14 @@ const Hero: React.FC = () => {
       {/* Contenido */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          {/* Foto de Perfil */}
+          {/* Logo */}
           <div className="mb-8 flex justify-center animate-slide-down">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-white via-primary-200 to-white rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
               <img 
-                src="/foto-perfil.png" 
+                src="/diseno-logo.png" 
                 alt="Fernando Lara - Desarrollador Full Stack" 
-                className="relative w-48 h-48 md:w-56 md:h-56 rounded-full shadow-2xl border-4 border-white object-cover ring-4 ring-primary-300 ring-opacity-50"
+                className="relative w-48 h-48 md:w-56 md:h-56 rounded-full shadow-2xl border-4 border-white object-contain ring-4 ring-primary-300 ring-opacity-50 bg-white"
               />
             </div>
           </div>
