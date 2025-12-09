@@ -141,7 +141,7 @@ const Experience: React.FC = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
           {[
-            { number: '5+', label: 'Años de Experiencia', icon: '⏱️' },
+            { number: '7+', label: 'Años de Experiencia', icon: '⏱️' },
             { number: '15+', label: 'Proyectos Completados', icon: '✅' },
             { number: '8+', label: 'Tecnologías Dominadas', icon: '💻' },
             { number: '100%', label: 'Satisfacción Cliente', icon: '⭐' },
