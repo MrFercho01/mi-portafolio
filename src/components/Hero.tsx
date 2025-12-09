@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linkedin, Github, Mail } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -45,6 +46,35 @@ const Hero: React.FC = () => {
               className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-primary-900 transition-all duration-300 transform hover:scale-105"
             >
               Contactar
+            </a>
+          </div>
+
+          {/* Redes Sociales */}
+          <div className="flex gap-4 justify-center mt-8 animate-slide-up delay-400">
+            <a
+              href="https://www.linkedin.com/in/fernando-lara-moran-47844385"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:text-primary-900 transition-all duration-300 transform hover:scale-110 shadow-lg"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="https://github.com/MrFercho01"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:text-primary-900 transition-all duration-300 transform hover:scale-110 shadow-lg"
+              aria-label="GitHub"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:fernando.lara.moran@gmail.com"
+              className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:text-primary-900 transition-all duration-300 transform hover:scale-110 shadow-lg"
+              aria-label="Email"
+            >
+              <Mail className="w-5 h-5" />
             </a>
           </div>
         </div>
