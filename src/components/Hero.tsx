@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             Desarrollador Full Stack
           </p>
           <p className="text-lg md:text-xl mb-8 text-primary-200 max-w-2xl mx-auto animate-slide-up delay-200">
-            +7 años desarrollando soluciones web y móviles. Especializado en React Native, Next.js, TypeScript, Power Platform y Microsoft Dynamics 365
+            +10 años desarrollando soluciones web y móviles. Especializado en React Native, Next.js, TypeScript, Power Platform y Microsoft Dynamics 365
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-300">
             <a

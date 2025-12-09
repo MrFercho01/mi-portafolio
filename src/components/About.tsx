@@ -27,7 +27,7 @@ const About: React.FC = () => {
 
             <div className="space-y-6 animate-slide-up delay-200">
               <p className="text-lg text-gray-700 leading-relaxed">
-                <strong>Licenciado en Sistemas de Información</strong> con más de 7 años de experiencia 
+                <strong>Licenciado en Sistemas de Información</strong> con más de 10 años de experiencia 
                 en la industria. Especializado en desarrollo web desde 2013, desarrollo full stack desde 2018, 
                 y desarrollo mobile desde 2024. Experto en crear soluciones innovadoras con 
                 React Native, Next.js, TypeScript, Java y Power Platform.

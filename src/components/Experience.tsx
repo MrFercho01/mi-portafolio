@@ -76,7 +76,7 @@ const Experience: React.FC = () => {
             Experiencia Profesional
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Más de 7 años desarrollando soluciones empresariales
+            Más de 10 años desarrollando soluciones empresariales
           </p>
           <p className="text-sm text-gray-500 mt-2">
             *Proyectos completados: 10+ en empresas bancarias y corporativas
@@ -140,8 +140,8 @@ const Experience: React.FC = () => {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
-          {[
-            { number: '7+', label: 'Años de Experiencia', icon: '⏱️' },
+          {
+            { number: '10+', label: 'Años de Experiencia', icon: '⏱️' },
             { number: '15+', label: 'Proyectos Completados', icon: '✅' },
             { number: '8+', label: 'Tecnologías Dominadas', icon: '💻' },
             { number: '100%', label: 'Satisfacción Cliente', icon: '⭐' },
