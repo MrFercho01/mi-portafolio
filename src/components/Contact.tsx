@@ -1,18 +1,42 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí se puede agregar la lógica para enviar el formulario
-    console.log('Form submitted:', formData);
-    alert('¡Gracias por tu mensaje! Te contactaré pronto.');
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      // Enviar email usando EmailJS
+      const result = await emailjs.send(
+        'service_tmnuhgx', // Service ID
+        'template_nf8mkyr', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        'I9LUjDt0-kSsSbOgK' // Public Key
+      );
+
+      console.log('Email sent successfully:', result.text);
+      alert('¡Gracias por tu mensaje! Te contactaré pronto.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctame directamente.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -138,6 +162,21 @@ const Contact: React.FC = () => {
                 />
               </div>
               <div>
+                <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                  Asunto
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-primary-200"
+                  placeholder="¿De qué quieres hablar?"
+                />
+              </div>
+              <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
                   Mensaje
                 </label>
@@ -154,9 +193,10 @@ const Contact: React.FC = () => {
               </div>
               <button
                 type="submit"
-                className="w-full px-8 py-3 bg-white text-primary-900 rounded-lg font-semibold hover:bg-primary-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                disabled={isSubmitting}
+                className="w-full px-8 py-3 bg-white text-primary-900 rounded-lg font-semibold hover:bg-primary-50 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                Enviar Mensaje
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
               </button>
             </form>
           </div>
