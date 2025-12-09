@@ -16,12 +16,8 @@ const About: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up">
-              <div className="w-64 h-64 mx-auto rounded-full overflow-hidden shadow-2xl ring-4 ring-primary-500/20">
-                <img 
-                  src="/foto-perfil.png" 
-                  alt="Fernando Lara - Desarrollador Full Stack"
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-64 h-64 mx-auto bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center text-white text-8xl shadow-2xl">
+                👨‍💻
               </div>
             </div>
 
