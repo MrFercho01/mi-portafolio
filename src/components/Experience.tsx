@@ -12,15 +12,17 @@ interface Achievement {
 const experiences: Achievement[] = [
   {
     company: 'Banco Bolivariano',
-    role: 'Desarrollador Full Stack',
+    role: 'Desarrollador Full Stack - Orientación DevOps',
     period: '2021-2022, 2023-Oct 2025',
     icon: '🏦',
     color: 'bg-green-500',
     achievements: [
+      'Creación de pipelines CI/CD con Azure DevOps',
+      'Implementación de GitHub Actions para automatización',
       'Desarrollo de automatizaciones con Power Platform',
       'Aplicaciones web con Java y Visual .NET',
       'Integración de sistemas bancarios internos',
-      'Optimización de workflows operativos',
+      'Optimización de workflows operativos y deployment',
     ],
   },
   {

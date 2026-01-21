@@ -23,6 +23,16 @@ const services: Service[] = [
     icon: '⚙️',
   },
   {
+    title: 'DevOps & Cloud - Azure',
+    description: 'CI/CD con Azure DevOps, Azure Pipelines, deployment en Azure App Services y gestión de infraestructura.',
+    icon: '☁️',
+  },
+  {
+    title: 'DevOps & Cloud - AWS',
+    description: 'Implementación de pipelines CI/CD, EC2, S3, Lambda y automatización de infraestructura en AWS.',
+    icon: '🚀',
+  },
+  {
     title: 'Arquitectura de Software',
     description: 'Diseño de arquitecturas limpias, escalables y mantenibles siguiendo mejores prácticas.',
     icon: '🏗️',
@@ -42,7 +52,7 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
