@@ -43,10 +43,10 @@ const Projects: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Proyectos Destacados
+            Proyectos Personales
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Algunos de mis trabajos más recientes y destacados
+            Proyectos de código abierto y demostraciones técnicas
           </p>
         </div>
 
