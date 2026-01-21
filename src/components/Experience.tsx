@@ -17,12 +17,13 @@ const experiences: Achievement[] = [
     icon: '🏦',
     color: 'bg-green-500',
     achievements: [
-      'Creación de pipelines CI/CD con Azure DevOps',
-      'Implementación de GitHub Actions para automatización',
+      'Creación de pipelines CI/CD con Azure DevOps (YAML)',
+      'Implementación de GitHub Actions workflows para automatización',
+      'Configuración de AWS CodePipeline y deployment automatizado',
       'Desarrollo de automatizaciones con Power Platform',
       'Aplicaciones web con Java y Visual .NET',
       'Integración de sistemas bancarios internos',
-      'Optimización de workflows operativos y deployment',
+      'Optimización de workflows operativos y deployment continuo',
     ],
   },
   {
