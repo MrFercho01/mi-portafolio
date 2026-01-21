@@ -12,31 +12,58 @@ interface Certificate {
 
 const certificates: Certificate[] = [
   {
-    title: 'Azure DevOps Fundamentals',
-    issuer: 'Microsoft',
+    title: 'Azure DevOps Esencial',
+    issuer: 'LinkedIn Learning',
     date: '2024',
-    certificateUrl: '#', // Reemplaza con el link del certificado
+    certificateUrl: 'https://www.linkedin.com/learning/certificates/5cc994a000534636c1a3dd35d03c4029996319691548e46bf4616a8ea50c71b69?trk=share_certificate',
     icon: '☁️',
     color: 'bg-blue-500',
-    skills: ['Azure Pipelines', 'CI/CD', 'Azure Repos', 'Azure Boards'],
+    skills: ['Azure DevOps', 'CI/CD', 'Pipelines', 'VSTS'],
   },
   {
-    title: 'AWS Cloud Practitioner',
-    issuer: 'Amazon Web Services',
+    title: 'Fundamentos de la Arquitectura Empresarial',
+    issuer: 'LinkedIn Learning',
     date: '2024',
-    certificateUrl: '#', // Reemplaza con el link del certificado
-    icon: '🚀',
-    color: 'bg-orange-500',
-    skills: ['AWS Services', 'Cloud Architecture', 'EC2', 'S3', 'Lambda'],
+    certificateUrl: 'https://www.linkedin.com/feed/update/urn:li:activity:7393013727542841344/',
+    icon: '🏗️',
+    color: 'bg-green-500',
+    skills: ['Arquitectura', 'Enterprise', 'Diseño de Sistemas', 'Estrategia TI'],
   },
   {
-    title: 'GitHub Actions CI/CD',
-    issuer: 'GitHub',
+    title: 'Aprende Gobernanza de Datos',
+    issuer: 'LinkedIn Learning',
     date: '2024',
-    certificateUrl: '#', // Reemplaza con el link del certificado
-    icon: '⚡',
+    certificateUrl: 'https://www.linkedin.com/feed/update/urn:li:activity:7392774377705635840/',
+    icon: '📊',
     color: 'bg-purple-500',
-    skills: ['GitHub Actions', 'Workflows', 'Automation', 'Deployment'],
+    skills: ['Data Governance', 'Data Quality', 'Compliance', 'Data Management'],
+  },
+  {
+    title: 'Microsoft Azure Fundamentals (AZ-900)',
+    issuer: 'Grupo Business IT',
+    date: '2020',
+    certificateUrl: '#',
+    icon: '🌐',
+    color: 'bg-blue-600',
+    skills: ['Azure Cloud', 'Cloud Services', 'Azure Fundamentals', 'Cloud Computing'],
+  },
+  {
+    title: 'Administering SQL Database Infrastructure (20764C)',
+    issuer: 'MAINT',
+    date: '2016-2018',
+    certificateUrl: '#',
+    icon: '💾',
+    color: 'bg-orange-500',
+    skills: ['SQL Server', 'Database Admin', 'Infrastructure', 'Performance Tuning'],
+  },
+  {
+    title: 'Licenciado en Sistemas de Información',
+    issuer: 'Universidad de Guayaquil',
+    date: '2008',
+    certificateUrl: '#',
+    icon: '🎓',
+    color: 'bg-indigo-500',
+    skills: ['Sistemas', 'Desarrollo', 'Análisis', 'Tecnología'],
   },
 ];
 
@@ -53,7 +80,7 @@ const Certificates: React.FC = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificates.map((cert, index) => (
             <div
               key={index}
