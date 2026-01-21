@@ -99,6 +99,7 @@ const About: React.FC = () => {
                     { name: 'Inteligencia Artificial & ML', level: 87 },
                     { name: 'Salesforce Administration', level: 85 },
                     { name: 'Desarrollo Mobile (2024-Presente)', level: 85 },
+                    { name: 'Cloud & DevOps (Azure/AWS)', level: 75 },
                   ].map((skill, index) => (
                     <div key={index}>
                       <div className="flex justify-between mb-1">
