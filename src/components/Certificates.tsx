@@ -14,7 +14,7 @@ const certificates: Certificate[] = [
   {
     title: 'Azure DevOps Esencial',
     issuer: 'LinkedIn Learning',
-    date: '2024',
+    date: '2026',
     certificateUrl: 'https://www.linkedin.com/learning/certificates/5cc994a00053463c1a3dd35d03c4f29996319691548e46bf4616a8ea50c71b69?trk=share_certificate',
     icon: '☁️',
     color: 'bg-blue-500',
@@ -23,7 +23,7 @@ const certificates: Certificate[] = [
   {
     title: 'Fundamentos de la Arquitectura Empresarial',
     issuer: 'LinkedIn Learning',
-    date: '2024',
+    date: '2025',
     certificateUrl: 'https://www.linkedin.com/learning/certificates/763af234a1268ec002d272d1e832d105dcebc89b6e67d4382f1b253de888edbf?trk=share_certificate',
     icon: '🏗️',
     color: 'bg-green-500',
@@ -32,7 +32,7 @@ const certificates: Certificate[] = [
   {
     title: 'Aprende Gobernanza de Datos',
     issuer: 'LinkedIn Learning',
-    date: '2024',
+    date: '2025',
     certificateUrl: 'https://www.linkedin.com/learning/certificates/4a1a2c66164d258215bd3e64a4bf4f49383770e388542aec161065b17ff94e34?trk=share_certificate',
     icon: '📊',
     color: 'bg-purple-500',
@@ -41,7 +41,7 @@ const certificates: Certificate[] = [
   {
     title: 'Fundamentos de la Ingeniería de Datos',
     issuer: 'LinkedIn Learning',
-    date: '2024',
+    date: '2025',
     certificateUrl: 'https://www.linkedin.com/learning/certificates/f1a051a4ae52171b62f03adf99601bfc3bcfc7163b5d079f7dc257aaef01e649?trk=share_certificate',
     icon: '🔧',
     color: 'bg-teal-500',
