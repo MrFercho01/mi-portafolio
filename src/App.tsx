@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Services from './components/Services'
+import CommercialFLStore from './components/CommercialFLStore'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Certificates from './components/Certificates'
@@ -16,6 +17,7 @@ function App() {
       <Header />
       <Hero />
       <Services />
+      <CommercialFLStore />
       <Projects />
       <Experience />
       <Certificates />

@@ -8,9 +8,33 @@ interface Project {
   gradient: string;
   icon: string;
   link?: string;
+  linkLabel?: string;
+  linkType?: 'github' | 'external';
+  secondaryLink?: string;
+  secondaryLinkLabel?: string;
+  secondaryLinkType?: 'github' | 'external';
+  tertiaryLink?: string;
+  tertiaryLinkLabel?: string;
+  tertiaryLinkType?: 'github' | 'external';
 }
 
 const projects: Project[] = [
+  {
+    title: 'FL Store (Plataforma Comercial)',
+    description: 'Objetivo: digitalizar y potenciar la venta de productos FL Store mediante una plataforma comercial multicanal. Incluye catálogo de celulares, parlantes JBL y licores premium, panel administrativo para crear/editar productos, carga de imágenes, reseñas y métricas de interacción, integración con WhatsApp para cierre de ventas, API REST con MongoDB Atlas y experiencia completa en web y móvil.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB Atlas', 'React Native'],
+    gradient: 'bg-gradient-to-br from-orange-500 via-rose-500 to-red-600',
+    icon: '🛍️',
+    link: 'https://flstore-ec.vercel.app',
+    linkLabel: 'Ver sitio en producción',
+    linkType: 'external',
+    secondaryLink: 'https://github.com/MrFercho01/fl-store-online',
+    secondaryLinkLabel: 'Código Frontend',
+    secondaryLinkType: 'github',
+    tertiaryLink: 'https://github.com/MrFercho01/fl-store-backend',
+    tertiaryLinkLabel: 'Código Backend',
+    tertiaryLinkType: 'github',
+  },
   {
     title: 'RastreaTuPedido (Demo)',
     description: 'Proyecto demostrativo de sistema de rastreo de pedidos para empresas textiles. App móvil multiplataforma iOS/Android desarrollada con React Native, TypeScript y arquitectura limpia. Incluye documentación técnica completa y mejores prácticas de desarrollo.',
@@ -18,6 +42,8 @@ const projects: Project[] = [
     gradient: 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500',
     icon: '📱',
     link: 'https://github.com/MrFercho01/RastreaTuPedido',
+    linkLabel: 'Ver en GitHub',
+    linkType: 'github',
   },
   {
     title: 'Portafolio Profesional',
@@ -76,15 +102,51 @@ const Projects: React.FC = () => {
                 {/* Overlay con botón al hacer hover */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center z-20">
                   {project.link && project.link !== '#' ? (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-gray-100 flex items-center gap-2 shadow-xl"
-                    >
-                      <Github className="w-5 h-5" />
-                      <span>Ver en GitHub</span>
-                    </a>
+                    <div className="flex flex-col sm:flex-row items-center gap-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 flex items-center gap-2 shadow-xl"
+                      >
+                        {project.linkType === 'external' ? (
+                          <ExternalLink className="w-5 h-5" />
+                        ) : (
+                          <Github className="w-5 h-5" />
+                        )}
+                        <span>{project.linkLabel ?? 'Ver proyecto'}</span>
+                      </a>
+                      {project.secondaryLink && project.secondaryLink !== '#' && (
+                        <a
+                          href={project.secondaryLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-6 py-3 bg-white/90 text-gray-900 rounded-lg font-semibold hover:bg-white flex items-center gap-2 shadow-xl"
+                        >
+                          {project.secondaryLinkType === 'external' ? (
+                            <ExternalLink className="w-5 h-5" />
+                          ) : (
+                            <Github className="w-5 h-5" />
+                          )}
+                          <span>{project.secondaryLinkLabel ?? 'Ver más'}</span>
+                        </a>
+                      )}
+                      {project.tertiaryLink && project.tertiaryLink !== '#' && (
+                        <a
+                          href={project.tertiaryLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-6 py-3 bg-white/90 text-gray-900 rounded-lg font-semibold hover:bg-white flex items-center gap-2 shadow-xl"
+                        >
+                          {project.tertiaryLinkType === 'external' ? (
+                            <ExternalLink className="w-5 h-5" />
+                          ) : (
+                            <Github className="w-5 h-5" />
+                          )}
+                          <span>{project.tertiaryLinkLabel ?? 'Ver más'}</span>
+                        </a>
+                      )}
+                    </div>
                   ) : (
                     <div className="px-6 py-3 bg-white/90 text-gray-600 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2 shadow-xl">
                       <ExternalLink className="w-5 h-5" />
